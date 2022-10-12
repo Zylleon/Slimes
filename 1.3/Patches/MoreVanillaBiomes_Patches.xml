@@ -96,6 +96,28 @@
 					</value>
 				</li>
 				
+				
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="ZBiome_GlacialShield"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SilverSlime>0.01</ZSL_SilverSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+						<ZSL_WoodSlime>0.02</ZSL_WoodSlime>
+					</value>
+				</li>
+				
+				
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="ZBiome_Badlands"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SteelSlime>0.03</ZSL_SteelSlime>
+						<ZSL_ChemfuelSlime>0.06</ZSL_ChemfuelSlime>
+						<ZSL_FireSlime>0.15</ZSL_FireSlime>
+					</value>
+				</li>
+				
 			</operations>
 		</match>
 	</Operation>

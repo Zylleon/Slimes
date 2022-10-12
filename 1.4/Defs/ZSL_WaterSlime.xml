@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="ZSL_SlimeBase">
+    <defName>ZSL_WaterSlime</defName>
+    <label>water slime</label>
+    <description>A watery slime. This slime will naturally clean some of the filth in its path.</description>
+    <statBases>
+      <MoveSpeed>3.8</MoveSpeed>
+      <MarketValue>300</MarketValue>
+
+      <ComfyTemperatureMin>-55</ComfyTemperatureMin>
+
+      <ComfyTemperatureMax>60</ComfyTemperatureMax>
+      <Flammability>2.0</Flammability>
+
+    </statBases>
+    <tools>
+      <li>
+        <label>teeth</label>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>12</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <!-- <bloodDef>Filth_Fuel</bloodDef> -->
+      <trainability>Intermediate</trainability>
+      <baseBodySize>0.4</baseBodySize>
+      <baseHungerRate>0.2</baseHungerRate>
+      <baseHealthScale>0.4</baseHealthScale>
+      <foodType>OmnivoreRoughAnimal</foodType>
+      <wildness>0.60</wildness>
+      <manhunterOnTameFailChance>0.30</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>0.30</manhunterOnDamageChance>
+      <lifeExpectancy>6</lifeExpectancy>
+      <deathActionWorkerClass>DeathActionWorker_SmallExplosion</deathActionWorkerClass>
+      <canBePredatorPrey>false</canBePredatorPrey>
+	  
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.18</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.3</minAge>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+    </race>
+	<comps>
+      <li Class="CompProperties_EggLayer">
+        <eggFertilizedDef>ZSL_EggWaterSlimeFertilized</eggFertilizedDef>
+        <eggFertilizationCountMax>1</eggFertilizationCountMax>
+        <eggLayIntervalDays>6</eggLayIntervalDays>
+        <eggProgressUnfertilizedMax>0.5</eggProgressUnfertilizedMax>
+        <eggCountRange>1</eggCountRange>
+      </li>
+	  <li Class="ZSlime.CompProperties_Cleaner">
+        <!-- <thingToSpawn>Chemfuel</thingToSpawn> -->
+        <!-- <spawnCount>1</spawnCount> -->
+        <!-- <spawnIntervalRange>10000~30000</spawnIntervalRange> -->
+      </li>
+    </comps>
+	
+	<butcherProducts>
+      <Chemfuel>30</Chemfuel>
+    </butcherProducts>
+	
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>ZSL_WaterSlime</defName>
+    <label>water slime</label>
+    <race>ZSL_WaterSlime</race>
+    <combatPower>350</combatPower>
+    <ecoSystemWeight>0.80</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+		  <texPath>ZSlimes/Animal/LiquidSlime/Slime</texPath>
+          <drawSize>0.5</drawSize>
+          <color>(102,129,140)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+		  <texPath>ZSlimes/Animal/Slime/Dessicated_Slime</texPath>
+          <drawSize>0.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+		  <texPath>ZSlimes/Animal/LiquidSlime/Slime</texPath>
+          <drawSize>0.75</drawSize>
+          <color>(102,129,140)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+		  <texPath>ZSlimes/Animal/Slime/Dessicated_Slime</texPath>
+          <drawSize>0.75</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+		  <texPath>ZSlimes/Animal/LiquidSlime/Slime</texPath>
+          <drawSize>0.95</drawSize>
+          <color>(102,129,140)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+		  <texPath>ZSlimes/Animal/Slime/Dessicated_Slime</texPath>
+          <drawSize>0.95</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <ThingDef ParentName="EggFertBase">
+    <defName>ZSL_EggWaterSlimeFertilized</defName>
+    <label>water slime egg (fert.)</label>
+    <description>A fertilized water slime egg. If all goes well, it should hatch into a baby water slime. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <color>(181,199,213)</color>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>23.0</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>8</hatcherDaystoHatch>
+        <hatcherPawn>ZSL_WaterSlime</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+  
+</Defs>
