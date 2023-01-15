@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="ZSL_SlimeBase">
+    <defName>ZSL_ChemfuelSlime</defName>
+    <label>chemfuel slime</label>
+    <description>A yellowish, liquidy slime full of chemfuel.</description>
+    <statBases>
+      <MoveSpeed>3.8</MoveSpeed>
+      <MarketValue>250</MarketValue>
+      <ComfyTemperatureMin>-35</ComfyTemperatureMin>
+      <ComfyTemperatureMax>60</ComfyTemperatureMax>
+      <Flammability>2.0</Flammability>
+
+    </statBases>
+    <tools>
+      <li>
+        <label>teeth</label>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>12</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <bloodDef>Filth_Fuel</bloodDef>
+      <trainability>Intermediate</trainability>
+      <baseBodySize>0.4</baseBodySize>
+      <baseHungerRate>0.2</baseHungerRate>
+      <baseHealthScale>0.4</baseHealthScale>
+      <foodType>OmnivoreRoughAnimal</foodType>
+      <wildness>0.60</wildness>
+      <manhunterOnTameFailChance>0.30</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>0.30</manhunterOnDamageChance>
+      <lifeExpectancy>6</lifeExpectancy>
+      <deathActionWorkerClass>DeathActionWorker_SmallExplosion</deathActionWorkerClass>
+      <canBePredatorPrey>false</canBePredatorPrey>
+	  
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.18</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.3</minAge>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+    </race>
+	<comps>
+      <li Class="CompProperties_EggLayer">
+        <eggFertilizedDef>ZSL_EggChemfuelSlimeFertilized</eggFertilizedDef>
+        <eggFertilizationCountMax>1</eggFertilizationCountMax>
+        <eggLayIntervalDays>6</eggLayIntervalDays>
+        <eggProgressUnfertilizedMax>0.5</eggProgressUnfertilizedMax>
+        <eggCountRange>1</eggCountRange>
+      </li>
+	  <li Class="CompProperties_Spawner">
+        <thingToSpawn>Filth_Fuel</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>4000~8000</spawnIntervalRange>
+      </li>
+	  <li Class="ZSlime.CompProperties_SlimeSpawner">
+        <thingToSpawn>Chemfuel</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>10000~30000</spawnIntervalRange>
+      </li>
+    </comps>
+	
+	<butcherProducts>
+      <Chemfuel>30</Chemfuel>
+    </butcherProducts>
+	
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>ZSL_ChemfuelSlime</defName>
+    <label>chemfuel slime</label>
+    <race>ZSL_ChemfuelSlime</race>
+    <combatPower>350</combatPower>
+    <ecoSystemWeight>0.80</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+		  <texPath>ZSlimes/Animal/LiquidSlime/Slime</texPath>
+          <drawSize>0.5</drawSize>
+          <color>(167,123,73)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+		  <texPath>ZSlimes/Animal/Slime/Dessicated_Slime</texPath>
+          <drawSize>0.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+		  <texPath>ZSlimes/Animal/LiquidSlime/Slime</texPath>
+          <drawSize>0.75</drawSize>
+          <color>(167,123,73)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+		  <texPath>ZSlimes/Animal/Slime/Dessicated_Slime</texPath>
+          <drawSize>0.75</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+		  <texPath>ZSlimes/Animal/LiquidSlime/Slime</texPath>
+          <drawSize>0.95</drawSize>
+          <color>(167,123,73)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+		  <texPath>ZSlimes/Animal/Slime/Dessicated_Slime</texPath>
+          <drawSize>0.95</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <ThingDef ParentName="EggFertBase">
+    <defName>ZSL_EggChemfuelSlimeFertilized</defName>
+    <label>chemfuel slime egg (fert.)</label>
+    <description>A fertilized chemfuel slime egg. If all goes well, it should hatch into a baby chemfuel slime. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <color>(226,198,88)</color>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>23.0</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>8</hatcherDaystoHatch>
+        <hatcherPawn>ZSL_ChemfuelSlime</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+  
+</Defs>

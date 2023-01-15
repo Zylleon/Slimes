@@ -109,6 +109,28 @@
 					</value>
 				</li>
 				 
+				 <!-- temperate, friendly -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="AB_IdyllicMeadows"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_WoodSlime>0.1</ZSL_WoodSlime>
+						<ZSL_SteelSlime>0.05</ZSL_SteelSlime>
+						<ZSL_FireSlime>0.005</ZSL_FireSlime>
+						<ZSL_JadeSlime>0.008</ZSL_JadeSlime>
+						<ZSL_WaterSlime>0.05</ZSL_WaterSlime>
+					</value>
+				</li>
+				
+				 <!-- tropical swamp, corrupted-->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="AB_MiasmicMangrove"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_WoodSlime>0.02</ZSL_WoodSlime>
+						<ZSL_JadeSlime>0.008</ZSL_JadeSlime>
+					</value>
+				</li>
 			</operations>
 		</match>
 	</Operation>
