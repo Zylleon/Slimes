@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="ZSL_SlimeBase">
+    <defName>ZSL_FireSlime</defName>
+    <label>fire slime</label>
+    <description>These slimes are highly resistant to the inner flame they carry, and comfortable even in extreme heat. Be careful of keeping these near anything flammable - or explosive.</description>
+    <statBases>
+      <MoveSpeed>3.8</MoveSpeed>
+      <MarketValue>220</MarketValue>
+      <Flammability>0.0</Flammability>
+      <ComfyTemperatureMax>750</ComfyTemperatureMax>
+
+    </statBases>
+    <tools>
+      <li>
+        <label>teeth</label>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>12</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+		<chanceFactor>0.2</chanceFactor>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>ZSL_Burn</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <bloodDef>Filth_Ash</bloodDef>
+      <trainability>Intermediate</trainability>
+      <baseBodySize>0.58</baseBodySize>
+      <baseHungerRate>0.45</baseHungerRate>
+      <baseHealthScale>0.9</baseHealthScale>
+      <foodType>OmnivoreRoughAnimal</foodType>
+      <wildness>0.60</wildness>
+      <manhunterOnTameFailChance>0.80</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>0.80</manhunterOnDamageChance>
+      <lifeExpectancy>15</lifeExpectancy>
+	  
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.18</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.3</minAge>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+    </race>
+	<comps>
+      <li Class="CompProperties_EggLayer">
+        <eggFertilizedDef>ZSL_EggFireSlimeFertilized</eggFertilizedDef>
+        <eggFertilizationCountMax>1</eggFertilizationCountMax>
+        <eggLayIntervalDays>4</eggLayIntervalDays>
+        <eggProgressUnfertilizedMax>0.5</eggProgressUnfertilizedMax>
+        <eggCountRange>1</eggCountRange>
+      </li>
+	 <!--  <li Class="CompProperties_FireOverlay">
+        <fireSize>0.65</fireSize>
+        <offset>(0,0,0.2)</offset> 
+      </li>-->
+	  <li Class="ZSlime.CompProperties_FireSlimeOverlay">
+        <fireSize>0.65</fireSize>
+        <!-- <offset>(0,0,0.2)</offset> -->
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>3.5</heatPerSecond>
+        <!-- <heatPushMaxTemperature>23</heatPushMaxTemperature> -->
+      </li>
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>Fire</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>30000~60000</spawnIntervalRange>
+      </li>
+	  <!--
+	  <li Class="CompProperties_Spawner">
+        <thingToSpawn>Gas_Smoke</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>3000~6000</spawnIntervalRange>
+      </li>
+	  -->
+    </comps>
+	
+	<butcherProducts>
+      <Fire>22</Fire>
+       <!-- <Gas_Smoke>1</Gas_Smoke>  -->
+    </butcherProducts>
+	
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>ZSL_FireSlime</defName>
+    <label>fire slime</label>
+    <race>ZSL_FireSlime</race>
+    <combatPower>350</combatPower>
+    <ecoSystemWeight>0.80</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+		  <texPath>ZSlimes/Animal/SmallSlime/Slime</texPath>
+          <drawSize>0.68</drawSize>
+          <color>(88,44,44)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+		  <texPath>ZSlimes/Animal/Slime/Dessicated_Slime</texPath>
+          <drawSize>0.68</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+		  <texPath>ZSlimes/Animal/SmallSlime/Slime</texPath>
+          <drawSize>0.95</drawSize>
+          <color>(88,44,44)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+		  <texPath>ZSlimes/Animal/Slime/Dessicated_Slime</texPath>
+          <drawSize>0.95</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+		  <texPath>ZSlimes/Animal/SmallSlime/Slime</texPath>
+          <drawSize>1.2</drawSize>
+          <color>(88,44,44)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+		  <texPath>ZSlimes/Animal/Slime/Dessicated_Slime</texPath>
+          <drawSize>1.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <ThingDef ParentName="EggFertBase">
+    <defName>ZSL_EggFireSlimeFertilized</defName>
+    <label>fire slime egg (fert.)</label>
+    <description>A fertilized fire slime egg. If all goes well, it should hatch into a baby fire slime. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+      <color>(138,138,128)</color>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>23.0</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>5</hatcherDaystoHatch>
+        <hatcherPawn>ZSL_FireSlime</hatcherPawn>
+      </li>
+      
+    </comps>
+  </ThingDef>
+  
+  
+  
+  <!-- burn attack -->
+  
+  <ToolCapacityDef>
+    <defName>ZSL_Burn</defName>
+    <label>burn</label>
+  </ToolCapacityDef>
+  
+  
+   <ManeuverDef>
+    <defName>ZSL_Burn</defName>
+    <requiredCapacity>ZSL_Burn</requiredCapacity>
+    <verb>
+      <verbClass>Verb_MeleeAttackDamage</verbClass>
+      <meleeDamageDef>Burn</meleeDamageDef>
+    </verb>
+    <logEntryDef>MeleeAttack</logEntryDef>
+    <combatLogRulesHit>Maneuver_Smash_MeleeHit</combatLogRulesHit>
+    <combatLogRulesDeflect>Maneuver_Smash_MeleeDeflect</combatLogRulesDeflect>
+    <combatLogRulesMiss>Maneuver_Smash_MeleeMiss</combatLogRulesMiss>
+    <combatLogRulesDodge>Maneuver_Smash_MeleeDodge</combatLogRulesDodge>
+  </ManeuverDef>
+  
+  
+</Defs>

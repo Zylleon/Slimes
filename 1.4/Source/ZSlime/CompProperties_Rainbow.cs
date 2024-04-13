@@ -25,7 +25,7 @@ namespace ZSlime
                 return;
             }
             Pawn pawn = parent as Pawn;
-            pawn.Drawer.renderer.SetAllGraphicsDirty();
+            pawn.Drawer.renderer.graphics.ResolveAllGraphics();
         }
 
     }

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>More Vanilla Biomes</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<operations>
+			<!-- friendly boreal forest-->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="ZBiome_AlpineMeadow"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SilverSlime>0.001</ZSL_SilverSlime>
+						<ZSL_WoodSlime>0.01</ZSL_WoodSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+					</value>
+				</li> 
+				
+			<!-- hot-warm sandy and wet -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="ZBiome_CoastalDunes"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_WoodSlime>0.005</ZSL_WoodSlime>
+						<ZSL_SteelSlime>0.02</ZSL_SteelSlime>
+						<ZSL_ChemfuelSlime>0.005</ZSL_ChemfuelSlime>
+						<ZSL_FireSlime>0.005</ZSL_FireSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+					</value>
+				</li>
+				
+			<!-- lush oasis -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="ZBiome_DesertOasis"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SteelSlime>0.01</ZSL_SteelSlime>
+						<ZSL_JadeSlime>0.008</ZSL_JadeSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+					</value>
+				</li>
+				
+			<!-- warm-hot grasslands -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="ZBiome_Grasslands"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SteelSlime>0.03</ZSL_SteelSlime>
+						<ZSL_ChemfuelSlime>0.005</ZSL_ChemfuelSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+					</value>
+				</li>
+				
+			<!-- sea ice -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="ZBiome_Iceberg_NoBeach"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SilverSlime>0.01</ZSL_SilverSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+					</value>
+				</li>
+				
+			<!-- cold bog -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="ZBiome_Marsh"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SilverSlime>0.001</ZSL_SilverSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+					</value>
+				</li>
+				
+			<!-- wet temperate-tropical-->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="ZBiome_CloudForest"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_WoodSlime>0.05</ZSL_WoodSlime>
+						<ZSL_JadeSlime>0.008</ZSL_JadeSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+					</value>
+				</li> 
+				
+			<!-- extreme desert -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="ZBiome_Sandbar_NoBeach"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SteelSlime>0.03</ZSL_SteelSlime>
+						<ZSL_ChemfuelSlime>0.005</ZSL_ChemfuelSlime>
+						<ZSL_FireSlime>0.05</ZSL_FireSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+					</value>
+				</li>
+				
+				
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="ZBiome_GlacialShield"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SilverSlime>0.01</ZSL_SilverSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+						<ZSL_WoodSlime>0.02</ZSL_WoodSlime>
+					</value>
+				</li>
+				
+				
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="ZBiome_Badlands"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SteelSlime>0.03</ZSL_SteelSlime>
+						<ZSL_ChemfuelSlime>0.06</ZSL_ChemfuelSlime>
+						<ZSL_FireSlime>0.15</ZSL_FireSlime>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+

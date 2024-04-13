@@ -56,7 +56,6 @@
       <manhunterOnTameFailChance>0.30</manhunterOnTameFailChance>
       <manhunterOnDamageChance>0.30</manhunterOnDamageChance>
       <lifeExpectancy>6</lifeExpectancy>
-      <deathActionWorkerClass>DeathActionWorker_SmallExplosion</deathActionWorkerClass>
       <canBePredatorPrey>false</canBePredatorPrey>
 	  
       <lifeStageAges>

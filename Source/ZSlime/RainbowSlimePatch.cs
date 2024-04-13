@@ -9,32 +9,28 @@ using Verse;
 
 namespace ZSlime
 {
-    [HarmonyPatch(typeof(PawnGraphicSet), "ResolveAllGraphics")]
+
+    [HarmonyPatch(typeof(PawnRenderNode_AnimalPart), "GraphicFor")]
     static class RainbowSlimePatch
     {
-        static void Postfix(PawnGraphicSet __instance)
+        static void Postfix(Pawn pawn, ref Graphic __result)
         {
-            CompRainbow isRainbow = __instance.pawn.TryGetComp<CompRainbow>();
+            CompRainbow isRainbow = pawn.TryGetComp<CompRainbow>();
             if (isRainbow == null)
             {
                 return;
             }
 
-            long ticks = __instance.pawn.ageTracker.AgeBiologicalTicks;
+            long ticks = pawn.ageTracker.AgeBiologicalTicks;
 
-            float speed = 1500f;
+            float speed = 5000f;
 
             float hue = (float)(ticks % speed) / speed;
 
             Color color = Color.HSVToRGB(hue, 1f, 1f);
 
-            //Color color = new Color((float)(ticks % 255) / 255, 0.5f, 0.5f);
-            CompColorable comp = __instance.pawn.TryGetComp<CompColorable>();
-            if (comp != null)
-            {
-                __instance.nakedGraphic = __instance.nakedGraphic.GetColoredVersion(__instance.nakedGraphic.Shader, color, Color.white);
-            }
-
+            __result = __result.GetColoredVersion(ShaderDatabase.Cutout, color, __result.colorTwo);
         }
     }
+
 }

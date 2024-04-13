@@ -2,15 +2,13 @@
 <Defs>
 
   <ThingDef ParentName="ZSL_SlimeBase">
-    <defName>ZSL_WaterSlime</defName>
-    <label>water slime</label>
-    <description>A watery slime. This slime will naturally clean some of the filth in its path.</description>
+    <defName>ZSL_ChemfuelSlime</defName>
+    <label>chemfuel slime</label>
+    <description>A yellowish, liquidy slime full of chemfuel.</description>
     <statBases>
       <MoveSpeed>3.8</MoveSpeed>
-      <MarketValue>300</MarketValue>
-
-      <ComfyTemperatureMin>-55</ComfyTemperatureMin>
-
+      <MarketValue>250</MarketValue>
+      <ComfyTemperatureMin>-35</ComfyTemperatureMin>
       <ComfyTemperatureMax>60</ComfyTemperatureMax>
       <Flammability>2.0</Flammability>
 
@@ -46,7 +44,7 @@
       </li>
     </tools>
     <race>
-      <!-- <bloodDef>Filth_Fuel</bloodDef> -->
+      <bloodDef>Filth_Fuel</bloodDef>
       <trainability>Intermediate</trainability>
       <baseBodySize>0.4</baseBodySize>
       <baseHungerRate>0.2</baseHungerRate>
@@ -56,6 +54,9 @@
       <manhunterOnTameFailChance>0.30</manhunterOnTameFailChance>
       <manhunterOnDamageChance>0.30</manhunterOnDamageChance>
       <lifeExpectancy>6</lifeExpectancy>
+      <deathAction>
+        <workerClass>DeathActionWorker_SmallExplosion</workerClass>
+      </deathAction>
       <canBePredatorPrey>false</canBePredatorPrey>
 	  
       <lifeStageAges>
@@ -78,16 +79,21 @@
     </race>
 	<comps>
       <li Class="CompProperties_EggLayer">
-        <eggFertilizedDef>ZSL_EggWaterSlimeFertilized</eggFertilizedDef>
+        <eggFertilizedDef>ZSL_EggChemfuelSlimeFertilized</eggFertilizedDef>
         <eggFertilizationCountMax>1</eggFertilizationCountMax>
         <eggLayIntervalDays>6</eggLayIntervalDays>
         <eggProgressUnfertilizedMax>0.5</eggProgressUnfertilizedMax>
         <eggCountRange>1</eggCountRange>
       </li>
-	  <li Class="ZSlime.CompProperties_Cleaner">
-        <!-- <thingToSpawn>Chemfuel</thingToSpawn> -->
-        <!-- <spawnCount>1</spawnCount> -->
-        <!-- <spawnIntervalRange>10000~30000</spawnIntervalRange> -->
+	  <li Class="CompProperties_Spawner">
+        <thingToSpawn>Filth_Fuel</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>4000~8000</spawnIntervalRange>
+      </li>
+	  <li Class="ZSlime.CompProperties_SlimeSpawner">
+        <thingToSpawn>Chemfuel</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>10000~30000</spawnIntervalRange>
       </li>
     </comps>
 	
@@ -98,9 +104,9 @@
   </ThingDef>
 
   <PawnKindDef ParentName="AnimalKindBase">
-    <defName>ZSL_WaterSlime</defName>
-    <label>water slime</label>
-    <race>ZSL_WaterSlime</race>
+    <defName>ZSL_ChemfuelSlime</defName>
+    <label>chemfuel slime</label>
+    <race>ZSL_ChemfuelSlime</race>
     <combatPower>350</combatPower>
     <ecoSystemWeight>0.80</ecoSystemWeight>
     <lifeStages>
@@ -108,7 +114,7 @@
         <bodyGraphicData>
 		  <texPath>ZSlimes/Animal/LiquidSlime/Slime</texPath>
           <drawSize>0.5</drawSize>
-          <color>(102,129,140)</color>
+          <color>(167,123,73)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
 		  <texPath>ZSlimes/Animal/Slime/Dessicated_Slime</texPath>
@@ -119,7 +125,7 @@
         <bodyGraphicData>
 		  <texPath>ZSlimes/Animal/LiquidSlime/Slime</texPath>
           <drawSize>0.75</drawSize>
-          <color>(102,129,140)</color>
+          <color>(167,123,73)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
 		  <texPath>ZSlimes/Animal/Slime/Dessicated_Slime</texPath>
@@ -130,7 +136,7 @@
         <bodyGraphicData>
 		  <texPath>ZSlimes/Animal/LiquidSlime/Slime</texPath>
           <drawSize>0.95</drawSize>
-          <color>(102,129,140)</color>
+          <color>(167,123,73)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
 		  <texPath>ZSlimes/Animal/Slime/Dessicated_Slime</texPath>
@@ -141,12 +147,12 @@
   </PawnKindDef>
 
   <ThingDef ParentName="EggFertBase">
-    <defName>ZSL_EggWaterSlimeFertilized</defName>
-    <label>water slime egg (fert.)</label>
-    <description>A fertilized water slime egg. If all goes well, it should hatch into a baby water slime. It can be eaten raw, but it's much better cooked.</description>
+    <defName>ZSL_EggChemfuelSlimeFertilized</defName>
+    <label>chemfuel slime egg (fert.)</label>
+    <description>A fertilized chemfuel slime egg. If all goes well, it should hatch into a baby chemfuel slime. It can be eaten raw, but it's much better cooked.</description>
     <graphicData>
       <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
-      <color>(181,199,213)</color>
+      <color>(226,198,88)</color>
       <drawSize>1.0</drawSize>
     </graphicData>
     <statBases>
@@ -155,7 +161,7 @@
     <comps>
       <li Class="CompProperties_Hatcher">
         <hatcherDaystoHatch>8</hatcherDaystoHatch>
-        <hatcherPawn>ZSL_WaterSlime</hatcherPawn>
+        <hatcherPawn>ZSL_ChemfuelSlime</hatcherPawn>
       </li>
     </comps>
   </ThingDef>
