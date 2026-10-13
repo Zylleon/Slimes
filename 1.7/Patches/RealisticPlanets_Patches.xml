@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Realistic Planets - Fan Update</li>
+		</mods>
+		
+		<match Class="PatchOperationSequence">
+			<operations>
+			<!-- temperate-cold grasslands -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="RRP_Grassland"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SteelSlime>0.02</ZSL_SteelSlime>
+						<ZSL_ChemfuelSlime>0.005</ZSL_ChemfuelSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+					</value>
+				</li>
+				
+			<!-- warm-hot grasslands -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="RRP_Savanna"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SteelSlime>0.02</ZSL_SteelSlime>
+						<ZSL_FireSlime>0.005</ZSL_FireSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+					</value>
+				</li>
+				
+			<!-- cold grasslands -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="RRP_Steppes"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SilverSlime>0.005</ZSL_SilverSlime>
+						<ZSL_SteelSlime>0.01</ZSL_SteelSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+					</value>
+				</li>
+				
+			<!-- temperate-cold desert -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="RRP_TemperateDesert"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SteelSlime>0.03</ZSL_SteelSlime>
+						<ZSL_ChemfuelSlime>0.005</ZSL_ChemfuelSlime>
+						<ZSL_FireSlime>0.005</ZSL_FireSlime>
+					</value>
+				</li>
+				
+			<!-- tundra -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="RRP_Permafrost"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SilverSlime>0.01</ZSL_SilverSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+					</value>
+				</li>
+				
+			<!-- sparse oasis -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="RRP_Oasis"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_JadeSlime>0.008</ZSL_JadeSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+					</value>
+				</li>
+					
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>

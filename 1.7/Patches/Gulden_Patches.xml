@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Gulden Mod</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="TemperateGuldenForest"]/wildAnimals</xpath>
+					<value>
+					<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_WoodSlime>0.05</ZSL_WoodSlime>
+						<ZSL_SteelSlime>0.02</ZSL_SteelSlime>
+						<ZSL_FireSlime>0.005</ZSL_FireSlime>
+						<ZSL_JadeSlime>0.008</ZSL_JadeSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+					</value>
+				</li>
+					
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+

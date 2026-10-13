@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+  <ThingDef ParentName="DrugBase">
+    <defName>ZSL_RainbowGlob</defName>
+    <label>rainbow glob</label>
+    <description>Taste the rainbow!</description>
+    <graphicData>
+      <texPath>ZSlimes/Misc/RainbowGlob</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <stackLimit>25</stackLimit>
+    <statBases>
+      <DeteriorationRate>0.5</DeteriorationRate>
+      <MarketValue>32</MarketValue>
+      <Mass>0.02</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <ingestible>
+	<foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.40</joy>
+
+      <drugCategory>Social</drugCategory>
+
+      <tableDesired>false</tableDesired>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>ZSL_RainbowHigh</hediffDef>
+          <severity>0.15</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <addictiveness>0</addictiveness>
+      </li>
+    </comps>
+    
+    <allowedArchonexusCount>50</allowedArchonexusCount>
+  </ThingDef>
+
+
+ <HediffDef>
+    <defName>ZSL_RainbowHigh</defName>
+    <label>a rainbow trip</label>
+    <labelNoun>drunkenness</labelNoun>
+    <description>Tripping out.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(113,255,31)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+ 
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.75</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <label>trippy</label>
+          <socialFightChanceFactor>0.95</socialFightChanceFactor>
+            <capMods>
+				<li>
+				  <capacity>Consciousness</capacity>
+				  <offset>0.08</offset>
+				</li>
+				<li>
+				  <capacity>Sight</capacity>
+				  <offset>0.08</offset>
+				</li>
+				<li>
+				    <capacity>Moving</capacity>
+					<postFactor>0.9</postFactor>
+				</li>
+            </capMods>
+        </li>
+        <li>
+          <minSeverity>0.25</minSeverity>
+          <label>trippin' out</label>
+          <painFactor>0.9</painFactor>
+          <socialFightChanceFactor>0.85</socialFightChanceFactor>
+            <capMods>
+              <li>
+                <capacity>Consciousness</capacity>
+                <offset>0.20</offset>
+              </li>
+				<li>
+				  <capacity>Sight</capacity>
+				  <offset>0.15</offset>
+				</li>
+              <li>
+                <capacity>Moving</capacity>
+				<postFactor>0.78</postFactor>
+              </li>
+			  <li>
+                <capacity>Eating</capacity>
+				<postFactor>0.9</postFactor>
+              </li>
+            </capMods>
+        </li>
+        <li>
+          <minSeverity>0.4</minSeverity>
+          <label>psychonaut</label>
+          <painFactor>0.8</painFactor>
+          <socialFightChanceFactor>0.6</socialFightChanceFactor>
+            <capMods>
+              <li>
+                <capacity>Consciousness</capacity>
+                <offset>0.30</offset>
+              </li>
+				<li>
+				  <capacity>Sight</capacity>
+				  <offset>0.35</offset>
+				</li>
+              <li>
+                <capacity>Moving</capacity>
+				<postFactor>0.6</postFactor>
+              </li>
+			  <li>
+                <capacity>Eating</capacity>
+				<postFactor>0.75</postFactor>
+              </li>
+            </capMods>
+        </li>
+        <li>
+          <minSeverity>0.65</minSeverity>
+          <label>ego death</label>
+          <painFactor>0.8</painFactor>
+          <socialFightChanceFactor>0.2</socialFightChanceFactor>
+            <capMods>
+              <li>
+                <capacity>Consciousness</capacity>
+                <offset>0.5</offset>
+              </li>
+				<li>
+				  <capacity>Sight</capacity>
+				  <offset>1.0</offset>
+				</li>
+              <li>
+                <capacity>Moving</capacity>
+				<postFactor>0.05</postFactor>
+              </li>
+			  <li>
+                <capacity>Eating</capacity>
+				<postFactor>0.2</postFactor>
+              </li>
+            </capMods>
+        </li> 
+      </stages>
+  </HediffDef>
+
+ <ThoughtDef>
+    <defName>ZSL_RainbowTrip</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>ZSL_RainbowHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+<!-- trippy -->
+      <li>
+        <label>trippy</label>
+        <description>All the colors seem brighter. I feel good!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+<!-- trippin out -->
+      <li>
+        <label>trippin' out</label>
+        <description>I'm trippin' out, man. The world is so wonderful and full of colorful patterns!</description>
+        <baseMoodEffect>14</baseMoodEffect>
+      </li> 
+<!-- psychonaut -->	  
+      <li>
+        <label>psychonaut</label>
+        <description>The sky octopus is happy in my brain! I love you!</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+	  
+<!-- ego death -->
+      <li>
+        <label>ego death</label>
+        <description>My sense of self has been subsumed by the universe.</description>
+        <baseMoodEffect>-30</baseMoodEffect>
+      </li>   
+    </stages>
+  </ThoughtDef>
+
+  
+</Defs>

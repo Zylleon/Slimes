@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Alpha Biomes</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<operations>
+			<!-- hostile rainforest -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="AB_FeraliskInfestedJungle"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_WoodSlime>0.05</ZSL_WoodSlime>
+						<ZSL_ChemfuelSlime>0.005</ZSL_ChemfuelSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+						<ZSL_JadeSlime>0.008</ZSL_JadeSlime>
+					</value>
+				</li>
+				
+			<!-- hot, arid-desert -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="AB_GallatrossGraveyard"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SteelSlime>0.02</ZSL_SteelSlime>
+						<ZSL_ChemfuelSlime>0.02</ZSL_ChemfuelSlime>
+					</value>
+				</li>
+				
+			<!-- temperate swamp -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="AB_GelatinousSuperorganism"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_WoodSlime>0.02</ZSL_WoodSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+					</value>
+				</li>
+				
+			<!-- temperate-hot? very barren -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="AB_MechanoidIntrusion"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SilverSlime>0.001</ZSL_SilverSlime>
+						<ZSL_SteelSlime>0.1</ZSL_SteelSlime>
+						<ZSL_ChemfuelSlime>0.005</ZSL_ChemfuelSlime>
+						<ZSL_FireSlime>0.001</ZSL_FireSlime>
+					</value>
+				</li>
+				
+			<!-- wet rainforest -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="AB_MycoticJungle"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_WaterSlime>0.05</ZSL_WaterSlime>
+					</value>
+				</li>
+				
+			<!-- hostile temperate forest? -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="AB_OcularForest"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_WaterSlime>0.01</ZSL_WaterSlime>
+					</value>
+				</li>
+				
+			<!-- cold, hostile-barren -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="AB_PropaneLakes"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SilverSlime>0.01</ZSL_SilverSlime>
+						<ZSL_SteelSlime>0.01</ZSL_SteelSlime>
+						<ZSL_WaterSlime>0.005</ZSL_WaterSlime>
+					</value>
+				</li>
+				
+			<!-- arid, fiery -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="AB_PyroclasticConflagration"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_ChemfuelSlime>0.08</ZSL_ChemfuelSlime>
+						<ZSL_FireSlime>0.05</ZSL_FireSlime>
+					</value>
+				</li>
+				
+			<!-- dark, cave -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="AB_RockyCrags"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+					</value>
+				</li>
+				
+			<!-- arid-desert, temperate?-->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="AB_TarPits"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_SteelSlime>0.02</ZSL_SteelSlime>
+						<ZSL_ChemfuelSlime>0.005</ZSL_ChemfuelSlime>
+						<ZSL_FireSlime>0.01</ZSL_FireSlime>
+					</value>
+				</li>
+				 
+				 <!-- temperate, friendly -->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="AB_IdyllicMeadows"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_WoodSlime>0.1</ZSL_WoodSlime>
+						<ZSL_SteelSlime>0.05</ZSL_SteelSlime>
+						<ZSL_FireSlime>0.005</ZSL_FireSlime>
+						<ZSL_JadeSlime>0.008</ZSL_JadeSlime>
+						<ZSL_WaterSlime>0.05</ZSL_WaterSlime>
+					</value>
+				</li>
+				
+				 <!-- tropical swamp, corrupted-->
+				<li Class="PatchOperationAdd"> 
+					<xpath>Defs/BiomeDef[defName="AB_MiasmicMangrove"]/wildAnimals</xpath>
+					<value>
+						<ZSL_RainbowSlime>0.001</ZSL_RainbowSlime>
+						<ZSL_WoodSlime>0.02</ZSL_WoodSlime>
+						<ZSL_JadeSlime>0.008</ZSL_JadeSlime>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+

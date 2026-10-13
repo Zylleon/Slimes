@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  
+    <ThingDef Abstract="True" ParentName="AnimalThingBase" Name="ZSL_SlimeBase">
+    <statBases>
+      <!-- <ToxicSensitivity>0.7</ToxicSensitivity> -->
+	  <LeatherAmount>0</LeatherAmount>
+      <MeatAmount>0</MeatAmount>
+      <!-- <ComfyTemperatureMax>60</ComfyTemperatureMax> -->
+    </statBases>
+    <race>
+      <fleshType>ZSL_SlimeFlesh</fleshType>
+	  <body>Snake</body>
+      <bloodDef>ZSL_Ooze</bloodDef>
+      <!-- <meatColor>(160,168,139)</meatColor> -->
+      <foodType>VegetarianRoughAnimal</foodType>
+	  <herdAnimal>false</herdAnimal>
+      <useMeatFrom>Cassowary</useMeatFrom>		<!-- to prevent "slime meat" from showing up in storage options -->
+    </race>
+   <tradeTags>
+      <li>AnimalExotic</li>
+   </tradeTags>
+   </ThingDef>
+   
+   
+   
+   <ThingDef ParentName="BaseFilth">
+    <defName>ZSL_Ooze</defName>
+    <label>ooze</label>
+    <statBases>
+      <Beauty>-30</Beauty>
+      <Cleanliness>-10</Cleanliness>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Filth/Spatter</texPath>
+      <color>(54, 105, 238, 180)</color>
+    </graphicData>
+    <filth>
+      <disappearsInDays>35~40</disappearsInDays>
+      <rainWashes>true</rainWashes>
+      <cleaningWorkToReduceThickness>70</cleaningWorkToReduceThickness>
+      <canFilthAttach>true</canFilthAttach>
+      <cleaningSound>Interact_CleanFilth_Fluid</cleaningSound>
+    </filth>
+  </ThingDef>
+  
+  <FleshTypeDef>
+    <defName>ZSL_SlimeFlesh</defName>
+    <corpseCategory>CorpsesAnimal</corpseCategory>
+    <damageEffecter>Damage_HitFlesh</damageEffecter>
+    <genericWounds>
+      <li>
+        <texture>ZSlimes/Misc/SlimeWounds/SlimeWoundA</texture>
+      </li>
+      <li>
+        <texture>ZSlimes/Misc/SlimeWounds/SlimeWoundB</texture>
+      </li>
+      <li>
+        <texture>ZSlimes/Misc/SlimeWounds/SlimeWoundC</texture>
+      </li>
+    </genericWounds>
+    <bandagedWounds>
+      <li>
+        <texture>Things/Pawn/Wounds/BandagedA</texture>
+      </li>
+      <li>
+        <texture>Things/Pawn/Wounds/BandagedB</texture>
+      </li>
+      <li>
+        <texture>Things/Pawn/Wounds/BandagedC</texture>
+      </li>
+    </bandagedWounds>
+  </FleshTypeDef>
+</Defs>
